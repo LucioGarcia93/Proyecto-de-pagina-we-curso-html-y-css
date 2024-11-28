@@ -1,0 +1,115 @@
+<!-- Todo comentario ira previo al elemento -->
+
+
+<!-- se llama index .html  porque es lo primero que busca un servidor -->
+<!DOCTYPE html><!--Aca puse htm y luego  selecciono el 5-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- titulo de la pagina -->
+    <title>El Internauta</title>
+    <!-- este es el enlace a css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- para importar iconos
+    (boxicons)  el enlace es https://boxicons.com/ (ctrl+clicizquierdo en el enlace)
+    para boxicons voy a la pagina luego busco
+     la parte de github(puede estar arriba a la derecha) de alli buscamos el
+    cdn(dice using via css copiamos el segundo)  luevo lo pego aca abajo-->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- Para remix icon voy a  la pagina()https://remixicon.com/ (ctrl+clicizquierdo en el enlace)
+      luego busco  la parte de github 
+     (arriba a la derecha tambien esta. ojo puede ser un icono)  buscar el CDN 
+     y copiarlo para pegarlo como hice aca debajo. en este caso figuraba bien 
+     claro-->
+     <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <!-- Para  la importacion de letras va necesitar si o si esos links que son 3.}
+      Recordar que es un link para Html. buscar en https://fonts.google.com/ (ctrl+clicizquierdo en el enlace)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- Luego de pegarlo en htm en la clase debemos seleccionar el contenido a estilizar
+ Ejemplo(h1{ y aqui pegaremos algunas de las fuentes que nos figuran arriba de donde sacamos el link para pegarlo en html}) -->
+
+</head>
+<body>
+    <!-- La seccion aqui debajo es la cabecera de la pagina web la cual tiene el numeral porque aun no tengo referencia, -->
+     <!-- agregue la class llamada logo para luego estilizarla y coloque nombre dentro de una a porque la idea es que cuando  -->
+     <!-- toquemos el logo nos redireccione a donde queremos en href aun no puse nada y agregue el numeral para que no quede 
+      vacio -->
+    <header>
+    <a href="#" class="logo">...GR...</a>
+    <!-- Recordar que arme la lista poniendo unorderlist(sin orden lista), luego añadi cada li(elemento de lista) y a cada un le puse -->
+     <!-- una "a" para que al darle click nos lleve a un sitio -->
+    <!-- es un truco para que el botton sea clickeable sin usar javascript -->
+
+
+      <!-- togle significa palanca input checkbox es aquel que nos permite hacer click-->
+    <!--al label le agrego una clase-->
+    <input type="checkbox" name="checkbox" id="menu-toggle">
+    
+    <label for="menu-toggle" class="menu-icon-action">
+      <div class='bx bx-menu' id="menu-icon"></div>
+    </label> 
+    
+    <!-- label significa etiqueta por lo tanto es lo que se lee y al pegarle el icono adentro se leera el icono en el boton-->
+        <!-- --> <!--fue extraido de box.icons buscando como "menu" copie el font pero lo modifique, 
+        ya que venia como <i></i> (ithalic)y lo tranforme a div(division) tambien agregue un "id=menu-icon".
+        el id en css se marca con "#"",
+        sirve para que cuando se achique la pantalla pueda tocar el icono y desplegar los "li" 
+        
+        TIPO CHECKBOX ES PARA APRETAR Y QUE BAJEN LISTAS-->
+     
+        <ul class="navlist"><!--nav list es lista de  navegacion  es necesaria para agrergar los "li"-->
+        
+            <li><a href="#">¿Quiénes somos?</a></li>
+            <li><a href="#">Correo</a></li><!--cada li es un elemento que figura en la parte superior de la pagina-->
+            <li><a href="#">Telefono</a></li>
+            <li><a href="#">Colaboraciones</a></li>
+            <li><a href="#">Recomendaciones</a></li>
+        </ul>
+      </header>
+
+
+        <!-- hero section es el centro de escena de la pagina-->
+
+        <section class="hero">
+       <div class="hero-text">
+        <h5>Soluciones informáticas</h5>
+        <h4>Modalidad offline and online</h4>
+        <h1>Global Red</h1>
+        <p>No es necesario el lenguaje coloquial para comprender con claridad
+           un ejercicio o un algoritmo informático. ¡Animate!</p>
+        <a href="#"><i class="ri-file-video-line"></i>      Adjuntá tus inconvenientes</a> 
+        <a href="#"><i class="ri-git-repository-line"></i>    Encontrá tus soluciones aquí</a>
+
+       </div>
+       <div>
+        <img src="assets/images/wall-e.jpg" alt="" class="hero-img">
+       <!-- el footer lo puse aca para que se acomode en la derecha -->
+      </div><!--el scr es la ruta para pegar la imagen ..puede ser una url absoluta o relativa-->
+
+         
+      </section>
+      <div class="icons">
+        <!-- aca estoy poniendo todos los iconos, para que al click vayan a la referencia que pongo -->
+        <a href="#"><i class="ri-instagram-line"></i></a>
+        <a href="#"><i class="ri-facebook-circle-line"></i></a>
+        <a href="#"><i class="ri-youtube-line"></i></a>
+        <a href="#"><i class="ri-whatsapp-line"></i></a>
+        <a href="#"><i class="ri-telegram-line"></i></a>
+       
+      </div>
+      <div class="scroll-down">
+          <a href="#"><i class="ri-arrow-down-circle-line"></i></a>
+      </div>
+
+
+
+   
+</body>
+</html>

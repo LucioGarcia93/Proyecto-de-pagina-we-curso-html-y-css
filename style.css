@@ -1,0 +1,414 @@
+
+    /* font-family: "Sour Gummy", sans-serif; */
+ /* a este font family lo  saque de la misma 
+ pagina de donde extraje el link para el html y si funciono. 
+ Recorda que dice para pegar en css */
+/* Normalizacion: se pone para que la pagina no tome la
+estilizacion que ofrece por defecto el servidor se comienza colocanco un *{} de esta manera selecciono todo con el 
+asterisco alli  ya comienzo a desarrollar la estilizacion general que pretendo */
+*{
+    padding: 0;
+    margin: 0 0 0 0;
+    box-sizing: border-box;/*esto mantiene el ancho y el alto a pesar de padding y border*/
+    font-family: "Sour Gummy", sans-serif; /*usara este de base pero luego como es cascada se va modificando.
+    recorda que es 
+    sacado de google este*/
+    list-style: none;/*esto hara que los puntitos decorativos de las listas no figuren,se quitan*/
+
+    text-decoration: none; /*esto quita toda decoracion de cualquier texto.como es cascada luego puedo añadirlas 
+    ejemplo subrayado enlaces*/
+    color: rgba(255, 255, 255, 0.86);/*El color de la letra*/
+
+
+}
+/*El siguiente body es un pendiente a a modificar ya que solo lo puse para poder dar fondo negro y ver las letras*/
+body{
+    background-color: rgb(75, 70, 70);
+
+
+
+}
+
+
+header{
+    color: rgba(255, 255, 255, 0.86);/*El color de la letra*/
+    position: fixed; /*Esto hace que quede fijo en la parte superior*/
+    right: 0;/*iniciara bien a la derecha de nuestra pantalla*/
+    top: 0;/*iniciará bien arriba de nuestra pantalla*/
+    z-index: 100;/*Traerá hacia bien al frente al header de esta  manera ningun elemento lo tapara,
+    a menos que le modifiquemos el z index al otro elemento jajaj*/
+    width: 100%; /*Esto es el ancho*/
+    display: flex;/*Esto hará que los elementos se acomoden en linea o sea uno al ladito del otro en el encabezado 
+    de la pagina*/
+    align-items: center;/*el centrado vertical sonre el top que le señale antes claro. es el centtro del top*/
+    justify-content: space-between;/*Hara que los elementos bien separados*/
+    padding: 15px 3%;/*El primero (15px) hace referencia al eje vertical es decir que lo acercaria  de arriba a los
+     centros si le aumentamos y el segundo(3%) hace referencia al eje horizontal*/
+     background-color: transparent;/*Esto se hace para que las letras queden flotando  y no tengamos el  fondo del 
+     background general. sirve por si a futuro pego una imagen*/
+
+
+
+}
+/*el punto marcaba lo que era una clase, conocida como class en html. Elemplo class="logo"*/
+.logo{
+    margin-left: 245px;
+    font-size: 85px;/*Es el tamaño del las letras del logo*/
+    font-weight: 290;/*es el grosor de las letras*/
+     border: 2.5px transparent ;/*lo agregue yo*/
+     transition: all 0.5s ease;/*lo agregue yo*/
+     
+}
+
+.logo:hover{/*lo agregue yo*/
+    border: 2.0px solid rgba(108, 8, 126, 0.86);/*lo agregue yo*/
+}
+.navlist{display: flex;/*sirve para que los elementos del ul se pongan el linea*/
+}
+.navlist a{/*Esto es para trabajar los "a" de la clase nav-list*/
+    margin-left: 40px;/*Esto hara que los elementos "a" de la lista tengan un margen isquierdo entre ellos de 50pixeles*/
+    font-size: 35px;/*es el tamaño de las letras*/
+    font-weight: 200;/*es el grosor de las letras*/
+    border-bottom: 1.5px solid transparent; /*Esto es un subrayado transparente*/
+    transition: all 0.5s ease; /*ALL HACE REFERENCIA A QUE TODO LO DEL A NAVLIST SEA MODIFICABLE 
+    Esto es para transicionar todas las caracteristicas del nav list. recorda que
+    transicion es con actividad humana(clic o pasar el puntero), mientras que animar es automatico
+     EASE ES EL TIPO DE TRANSICION en este caso la forma en que pasara de transparente a blanco el subrayado*/
+
+}
+.navlist a:hover{/*Esto es para trabajar los "a" de la clase nav-list PERO CUAANDO LE PASE EL MOUSE ENCIMA 
+    con el ":hover" dejo en claro que es una sub clase */
+    
+   
+    border-bottom: 1.6px solid rgba(255, 255, 255, 0.86); /*Esto HARA QUE LO TRANSPARENTE SEA BLANCO AL PASAR EL PUNTERO SOBRE ÉL*/
+   
+
+}
+
+ #menu-icon{
+    
+ /*Es para que no aparezca a menos que haga una transicion  al achicarse la pantalla(colapsada se dice"*/
+
+    color: rgba(197, 182, 182, 0.86);/*El color de la letra*/
+    font-size:55px;
+    z-index:101; /*debe ser mayor al que pusimos al inicio en el header. recorda que el indicador z es como un 3D*/
+    display:none;
+}
+
+#menu-toggle{
+    color: rgba(255, 255, 255, 0.86);/*El color de la letra*/
+
+    display:none;/*nunca quiero que se vea el toggle (check box), toggle es palanca*/
+}
+
+.menu-icon-action{/*El "#" marca que se trata del id llama menu-icon-action*/
+    display:none; /*le pongo none para que no se lo vea  ni se pueda hacer click*/
+    font-size: 23px;
+    color: rgba(255, 255, 255, 0.86);/*El color de la letra*/
+
+}
+.hero{
+    color: rgba(255, 255, 255, 0.86);/*El color de la letra*/
+
+    width: 100%;/*maximo de ancho*/
+    height: 100%;/*maximo de alto*/
+    min-height: 100vh;/*el  alto minimo queremos que sea el 100 visualizable(view height significa minimo
+     visualizable de altura) ya que por nada queremos que se pierda el  hero*/
+    background:linear-gradient(25deg, rgb(73, 4, 233) 0%, rgba(12, 138, 221, 0.27) 35%, 
+    rgba(117, 186, 247, 0.911) 85%  ); /*Esto nos indica en que angulo de degradante(Ejemplo150deg) luego
+    lo demas es el color y en que porcentaje de pantalla se hara el degrade de color. primero va el angulo*/
+    position: relative; /*para poder darle altura y todo lo que queremos es decir top bottom left y right*/
+    display:grid;/* el display grid crea una cuadricula de una sola columna o mas si les agregamos, los elementos van uno debajo del otro*/
+    grid-template-columns: 1fr 1fr;/*define el numero y tamaño de columnas, por ejemplo puse dos culmnas de 1fr( fr significa free space...de un espacio disponible son) cada una*/
+    align-items: center;/*se centraran en cuanto al eje vertical*/
+    gap: 3rem; /*el gap es el espacio que habra entre los elementos y la medidad es root em..abreviada rem*/
+
+}
+section{
+    padding: 0  4%;/*el primer  numero(0) nos indica  que no pondremos nada de rlleno vertical en la seccion,mientras que de horizontal es como que lo justificamos
+    utilizaremos un relleno al rederor de la seccion del 8%*/
+    
+}
+
+
+
+.hero-text h5 {
+
+    margin-top: 105px;
+    font-size: 44px;
+    font-weight: 400;
+    margin-bottom: 22px;
+
+}
+.hero-text h1 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  ;
+    
+    padding: 15px 55px;
+    font-size: 60px;
+    line-height: 1.3;
+    font-weight: 200;
+    margin: 30px 10px  30px 10px;/*el primer 0 es arriba, el segundo 0 es abajo y 
+    el tercer valor es derecha izquierda es como que puse bottom*/
+    
+
+}
+.hero-text h4 {
+    border: 1px solid  pink;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 22px;
+    font-weight: 10;
+    margin-bottom: 12px;
+
+}
+.hero-text p {
+    font-size: 18px;/* pongo el porcentaje porque al achicar la pagina quiero que se achique*/
+    border: 1px solid  pink;
+    padding: 15px 30px;/*el padding hace que el radius se vea mas bonito*/
+    margin-top: 5px;
+    border-radius: 40px;
+    margin-bottom: 35px;
+    line-height:2.3;
+}
+.hero a {
+    display: inline-block;/*Esto permitira que se le pueda dar un ancho y un alto*/
+    line-height: .3;
+    font-size: 23px;
+    margin-top: 35px;
+    border: 1px solid pink;/*primero pongo el borde para luego poner el radius*/
+    padding:15px 20px;/*El padding me ayuda  junto con border soludcon el border radius*/
+    border-radius: 30px;
+    text-transform: uppercase;/*Se ultiliza para que se pase todo a en este caso mayusculas*/
+    transition: all 1 s ease;
+
+}
+.hero a:hover{
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.785);
+    i{color: black;}
+}
+
+
+.hero-img {
+    position: absolute;
+    right: 10%;
+    top: 35%;
+    width: 550px;
+   
+    height: auto;
+    opacity: .095;
+    border: solid pink;
+    border-radius: 100% 100% 100% 100% ;/*Esto marca el redondeo del radius*/
+    transition: all 1s ease;/*Esto hace que la transicion en este caso con el hover sea lineal*/
+   
+}
+.hero-img:hover {
+    right: 5%;
+    transform: translateX(10px);
+    transform: translateY(10px);
+    width: 750px;
+   
+    opacity: 1;
+    
+   
+}
+.icons {
+    background-color: transparent;
+    position: absolute; /*no tendrá en cuenta ninguna de las posiciones anteriores claro*/
+    top: 50vh; /*significa que estara a la mitad de lo que veamos en pantalla*/
+    padding: 0 0.5%; /*el cero hace referencia al relleno horizontal y el 3% al vertical*/
+    transform:translateY(-50%)/*Esto hará que se trasla de hacia arriba*/
+
+}
+.icons i {
+    display: block;
+    margin: 36px 0;
+    font-size: 25px;
+    transition: all 0.5s ease;/* transicion para luego modificar en el hover, la velocidad de transicion 
+    es medio segundo, la forma es ease y aplica a todo lo anterior*/
+}
+.icons i:hover{
+    transform: translateX(10px);
+    font-size: 45px;
+    color: black;
+}
+  
+.scroll-down {
+
+    position: absolute;
+    bottom: 3vh; /*Se vera bien  la  abajo de a pantalla*/
+    right: 3%; /*de esta manera salteo y me voy al 3% de la pantalla en general*/
+}
+.scroll-down i {
+    display: block;
+    font-size: 35px;
+    transition: all 0.5s ease;
+}
+.scroll-down i:hover{
+color: black;
+font-size: 55px;
+transform: translateY(10px);
+transform: translateX(-10px);
+
+}
+/*Aca vamos haciendo las mediasqueries para acomodar el tamaño y que la web sea responding*/
+@media (max-width:992px) /*mitad de pantalla*/
+/* de aca hacia abajo copie y pegue para modificar todo lo anterior que ante el achicamiento de pantalla 
+se vio alterado */
+{
+    section{
+        left: 5%;
+        padding: 0% 2%;
+        transition: 0.2s;
+    }
+
+    .hero-img {
+        position: absolute;
+        right: 10%;
+        top: 35%;
+        width: 40%;
+       
+        height: auto;
+        opacity: .095;
+        border: solid pink;
+        border-radius: 100% 100% 100% 100% ;/*Esto marca el redondeo del radius*/
+        
+       }
+       .hero-img:hover {
+        position: absolute;
+        right: 10%;
+        top: 35%;
+        width: 390px;
+       
+        height: auto;
+        opacity: .95;
+        border: solid pink;
+        border-radius: 100% 100% 100% 100% ;/*Esto marca el redondeo del radius*/
+       }
+        .icons{
+            display: none;
+        }
+        #menu-icon{
+            position: absolute;
+            color: rgba(255, 255, 255, 0.86);/*El color de la letra*/
+            margin-right: 36%;
+            font-size: 10px;
+            z-index:101;}
+        .logo{margin-bottom: 8px;
+                margin-left: 75px;
+                font-size: 65px;/*Es el tamaño del las letras del logo*/
+                font-weight: 290;/*es el grosor de las letras*/
+            }
+        .navlist a{
+            margin-left: 12px ;
+            font-size: 90%;
+           
+        }
+        .hero h5 {
+            margin-top: 5px;
+        }
+        .hero h1 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 25px;
+            font-weight:300px;
+        }
+        .hero-text p {
+            font-size: 90%;/* pongo el porcentaje porque al achicar la pagina quiero que se achique*/
+            border: 1px solid  pink;
+            padding: 15px 30px;/*el padding hace que el radius se vea mas bonito*/
+            margin-top: 2px;
+            border-radius: 40px;
+            margin-bottom: 35px;
+            line-height:2.3;
+        }
+        .hero a {
+            margin-top: 5px;
+            font-size: 14px;
+            
+        
+        }
+        .hero a:hover{
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.785);
+            i{color: black;}
+        }
+}
+@media (max-width:768px)/*pantalla de telefono*/
+/* de aca hacia abajo copie y pegue para modificar todo lo anterior que ante el achicamiento de pantalla 
+se vio alterado */
+{
+   .menu-icon-action{display: block;/*desbloqueo asi se ven*/
+     width: 50px;
+    } 
+
+
+    #menu-icon{display: block;
+        margin-right: 65px;
+        color: rgb(216, 216, 230);
+        font-size: 50px;}
+       
+  
+    .hero-text,h5 {
+        text-align: center;
+     
+    }    
+    .hero-img {
+        position: absolute;
+        right:center;
+        top: 65%;
+        width: 550px;
+       
+        height: auto;
+        opacity: .95;
+        border: solid pink;
+        transition: all 1s ease;/*Esto hace que la transicion en este caso con el hover sea lineal*/
+       
+    }
+    .hero-img:hover {
+        position: absolute;
+    
+        top: 65%;
+        width: 550px;
+    }
+        .hero{
+        height:100%;
+        gap: 1rem; 
+        grid-template-columns: 1fr;}
+
+    .navlist{position: absolute;/*fui acomodando e posicion a la pantalla*/
+        top: 100%;
+        right: -100%; /* primero se pone en 0 para ver cuan lindo queda y al final se modifica el rigth 
+        .es importante que al ultimo quede en -100 porque luego con el check lo paso a 0 y por transicio
+        parece que fuese un boton*/
+        width: 150px;
+        height: 130px;
+        background-color: blueviolet;
+        display: flex;
+        flex-direction:column ;
+        align-items: center;
+        padding: 10px 1px;
+        transition: all 0.05s ease;
+    }
+
+    .navlist a {margin: 0 5;}
+        
+    #menu-toggle:checked+label.menu-icon-action+ul{/*primero el right queda en -100% 
+        ESTO DICE: ATENCION...
+        del menu-toggle(ver en el html) si esta checked(apretado) voy a seleccionar el 
+        label.menu-icon-icon+ul(en realidad se hace todo eso para poder seleccionar
+        al hermano que es el ul y a este ul se le asigna el right:0; usando las llaves 
+        como en los casos normales) el icono en realidad es una etiqueta que tapa al botton
+
+        */
+        right: 0;
+    }
+}
+   
+
+    
+
+
+
+        
+
